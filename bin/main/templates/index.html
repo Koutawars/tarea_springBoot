@@ -1,15 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Agregar</title>
+    <title>Registro cliente</title>
     <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>container</h1>
+     	<div class="row">
+    		<form th:action="@{/registrar}" th:object="${Client}" class="col s12" method="post">
+    			<h2 class="center">Registro cliente</h2>
+		      	<div class="row">
+			        <div class="input-field col s12">
+			         	<input name="nombre" placeholder="Llenar el nombre" id="nombre" type="text" class="validate">
+			         	<label for="nombre">Nombre</label>
+			        </div>
+			        <div class="input-field col s12">
+			      		<p>
+					     	<label>
+					        	<input value="cedula" name="tipo_id" type="radio" checked />
+					        	<span>Cédula</span>
+					     	</label>
+					    </p>
+			      		<p>
+					     	<label>
+					        	<input value="TI" name="tipo_id" type="radio" />
+					        	<span>Tarjeta de identidad</span>
+					     	</label>
+					    </p>
+			        </div>
+			        <div class="input-field col s12">
+			         	<input name="id" placeholder="Numero de identificación" id="id" type="number" class="validate">
+			         	<label for="id">ID</label>
+			        </div>
+			        <div class="input-field col s6">
+			         	<input name="tel" placeholder="Telefono" id="telefono" type="number" class="validate">
+			         	<label for="telefono">Teléfono</label>
+			        </div>
+			        <div class="input-field col s6">
+			         	<input name="dir" placeholder="Dirección" id="dir" type="text" class="validate">
+			         	<label for="dir">Dirección</label>
+			        </div>
+			        <div class="input-field col s12">
+			         	<input name="ciudad" placeholder="Ciudad" id="ciudad" type="text" class="validate">
+			         	<label for="ciudad">Ciudad</label>
+			        </div>
+			        <input class="btn" type="submit" value="Enviar">
+		        </div>
+    		</form>
+    	</div>
     </div>
     
     <script src="js/jquery-3.3.1.min.js"></script>
